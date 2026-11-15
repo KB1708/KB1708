@@ -1,0 +1,53 @@
+name: Refresh profile cards
+
+on:
+  schedule:
+    - cron: "23 */12 * * *"   # twice a day
+  workflow_dispatch:           # "Run workflow" button in the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - profile.json
+      - scripts/**
+      - .github/workflows/profile.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-cards
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Render terminal cards
+        env:
+          # Optional: add a PROFILE_PAT secret to include private-repo languages/commits.
+          GH_TOKEN: ${{ secrets.PROFILE_PAT || secrets.GITHUB_TOKEN }}
+        run: python scripts/generate.py --config profile.json --out dist
+
+      - name: Generate contribution snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg?palette=github-dark&color_snake=#00ff41
+
+      - name: Publish to the output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          keep_history: false
+          commit_message: "chore: refresh profile cards"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

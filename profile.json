@@ -1,0 +1,148 @@
+{
+  "username": "KB1708",
+  "name": "KB",
+  "prompt_user": "kb",
+  "prompt_host": "goml",
+  "title": "Applied AI Engineer",
+  "role": "Member of Technical Staff – Applied AI (MTS-1)",
+  "company": "GOML",
+  "location": "Coimbatore, Tamil Nadu, India",
+  "location_short": "Coimbatore, IN",
+  "hide_languages": [
+    "Jupyter Notebook",
+    "HTML",
+    "CSS",
+    "Shell"
+  ],
+  "prefer_repo_description": false,
+  "theme": {
+    "bg": "#0a0e14",
+    "panel": "#0d1117",
+    "border": "#1c3b2a",
+    "accent": "#00ff41",
+    "accent_dim": "#0f9d3a",
+    "text": "#c9d1d9",
+    "muted": "#5f7a6b",
+    "cyan": "#56d4dd",
+    "amber": "#ffb000"
+  },
+  "banner": [
+    "██╗  ██╗██████╗  ██╗███████╗ ██████╗  █████╗ ",
+    "██║ ██╔╝██╔══██╗███║╚════██║██╔═████╗██╔══██╗",
+    "█████╔╝ ██████╔╝╚██║    ██╔╝██║██╔██║╚█████╔╝",
+    "██╔═██╗ ██╔══██╗ ██║   ██╔╝ ████╔╝██║██╔══██╗",
+    "██║  ██╗██████╔╝ ██║   ██║  ╚██████╔╝╚█████╔╝",
+    "╚═╝  ╚═╝╚═════╝  ╚═╝   ╚═╝   ╚═════╝  ╚════╝ "
+  ],
+  "banner_side": [
+    [
+      "APPLIED AI ENGINEER",
+      "accent"
+    ],
+    [
+      "LLM apps · RAG · AI agents",
+      "text"
+    ],
+    [
+      "MTS-1 @ GOML",
+      "amber"
+    ],
+    [
+      "Coimbatore, IN",
+      "muted"
+    ]
+  ],
+  "terminal": [
+    {
+      "cmd": "whoami",
+      "out": [
+        [
+          [
+            "KB",
+            "accent"
+          ],
+          [
+            " // Applied AI Engineer",
+            "text"
+          ]
+        ]
+      ]
+    },
+    {
+      "cmd": "cat role.txt",
+      "out": [
+        [
+          [
+            "Member of Technical Staff – Applied AI (MTS-1) ",
+            "text"
+          ],
+          [
+            "@ GOML",
+            "amber"
+          ]
+        ],
+        [
+          [
+            "Building production-grade AI applications: LLM apps, RAG & AI agents on AWS",
+            "muted"
+          ]
+        ]
+      ]
+    },
+    {
+      "cmd": "ls ~/focus",
+      "out": [
+        [
+          [
+            "genai-apps/  rag-pipelines/  ai-agents/  llm-evals/  aws-bedrock/",
+            "cyan"
+          ]
+        ]
+      ]
+    },
+    {
+      "cmd": "echo $LOCATION",
+      "out": [
+        [
+          [
+            "Coimbatore, Tamil Nadu, India",
+            "text"
+          ]
+        ]
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "repo": "KB1708/Fittrack_Pro",
+      "description": "Fitness tracking app to log workouts, monitor progress over time and visualise health metrics on a clean dashboard.",
+      "tags": [
+        "fitness",
+        "analytics",
+        "dashboard"
+      ],
+      "language": "Python"
+    },
+    {
+      "repo": "prabha55555/Cognitive_Load_Analysis",
+      "description": "Research platform comparing cognitive load of AI chatbots vs Google Search, inferred from behavioural signals with ML.",
+      "tags": [
+        "react",
+        "fastapi",
+        "gemini",
+        "ml"
+      ],
+      "language": "TypeScript"
+    },
+    {
+      "repo": "KB1708/jarvis-personal-assistant",
+      "description": "Voice-driven personal AI assistant that listens, reasons with an LLM and automates everyday tasks on your machine.",
+      "tags": [
+        "voice",
+        "llm",
+        "automation"
+      ],
+      "language": "Python"
+    }
+  ]
+}
